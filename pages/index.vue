@@ -5,22 +5,23 @@
     </content-container>
     <my-card>
       <p>hello</p>
+      <skill-icon-container :skill-list="['HTML', 'css', 'Java']" />
     </my-card>
-    <LanguageIconContainer :language-list="['HTML', 'css', 'Java']" />
+    <div>aa</div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import MyCard from '~/components/atoms/MyCard.vue'
 import ContentContainer from '~/components/atoms/ContentContainer.vue'
-import myCard from '~/components/atoms/myCard.vue'
-import LanguageIconContainer from '~/components/molecules/LanguageIconContainer.vue'
+import SkillIconContainer from '~/components/molecules/SkillIconContainer.vue'
 
 @Component({
   components: {
     ContentContainer,
-    LanguageIconContainer,
-    myCard,
+    SkillIconContainer,
+    MyCard,
   },
 })
 export default class index extends Vue {}

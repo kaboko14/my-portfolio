@@ -7,12 +7,12 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component
-export default class myCard extends Vue {}
+export default class MyCard extends Vue {}
 </script>
 <style lang="scss" scoped>
 .my-card {
   &__container {
-    padding: 10px 4px;
+    padding: 20px;
     background-color: $base-color;
     border-radius: 3px;
     box-shadow: $shadow;
