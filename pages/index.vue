@@ -4,8 +4,9 @@
       <div>hello</div>
     </content-container>
     <my-card>
-      <LanguageIconContainer :language-list="['HTML', 'css', 'Java']" />
+      <p>hello</p>
     </my-card>
+    <LanguageIconContainer :language-list="['HTML', 'css', 'Java']" />
   </div>
 </template>
 

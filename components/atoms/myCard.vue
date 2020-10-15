@@ -11,9 +11,11 @@ export default class myCard extends Vue {}
 </script>
 <style lang="scss" scoped>
 .my-card {
-  // padding: 10px 4px;
-  // background-color: $base-color;
-  // border-radius: 3px;
-  // box-shadow: $shadow;
+  &__container {
+    padding: 10px 4px;
+    background-color: $base-color;
+    border-radius: 3px;
+    box-shadow: $shadow;
+  }
 }
 </style>
