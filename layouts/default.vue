@@ -41,8 +41,6 @@ dd {
 /* bodyのデフォルトを定義 */
 body {
   min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
 
@@ -50,11 +48,5 @@ body {
 ul,
 ol {
   list-style: none;
-}
-
-/* img */
-img {
-  max-width: 100%;
-  display: block;
 }
 </style>

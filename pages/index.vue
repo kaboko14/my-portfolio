@@ -3,21 +3,6 @@
     <content-container :title="'world'">
       <div>hello</div>
       <div>a</div>
-      <work-card :title="'タイトル'" :skill-list="['Java', 'HTML']">
-        <template v-slot:image>
-          <img
-            src="~/assets/image/zakkuri_pre.png"
-            alt=""
-            width="100%"
-            height="auto"
-          />
-        </template>
-        <template v-slot:text>
-          <p>
-            説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明
-          </p>
-        </template>
-      </work-card>
       <div>s</div>
       <my-card>
         <p>hello</p>
@@ -45,5 +30,8 @@ import WorkCard from '~/components/molecules/WorkCard.vue'
 })
 export default class index extends Vue {}
 </script>
-
-<style></style>
+<style lang="scss" scoped>
+img {
+  width: 100%;
+}
+</style>

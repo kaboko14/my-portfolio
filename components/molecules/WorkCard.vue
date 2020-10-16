@@ -1,13 +1,13 @@
 <template>
   <my-card>
     <section>
-      <h3 class="work-card__title">{{ title }}</h3>
+      <h4 class="work-card__title">{{ title }}</h4>
       <div class="work-card__inner-container">
         <div class="work-card__image-wrapper">
-          <slot name="image" />
+          <img :src="image" :alt="title" />
         </div>
         <div class="work-card__text-wrapper">
-          <slot name="text" />
+          <p>{{ text }}</p>
           <skill-icon-container
             :skill-list="skillList"
             class="work-card__skill-icon-container"
@@ -32,6 +32,12 @@ export default class WorkCard extends Vue {
   @Prop({ type: String, required: true })
   title!: string
 
+  @Prop({ type: String, required: true })
+  image!: string
+
+  @Prop({ type: String, required: true })
+  text!: string
+
   @Prop({ type: Array, required: true })
   skillList!: Array<string>
 }
@@ -43,18 +49,18 @@ export default class WorkCard extends Vue {
     flex-wrap: wrap;
     justify-content: space-between;
     @include tablet {
-      flex-direction: column;
+      display: block;
     }
   }
   &__title {
     margin-bottom: 10px;
   }
   &__image-wrapper {
-    // text-align: center;
-    display: flex;
-    height: 500px;
     flex: 1;
-    height: auto;
+    /deep/ img {
+      //子コンポーネントのimgのサイズ指定
+      width: 100%;
+    }
     @include tablet {
       margin-bottom: 0px;
     }
@@ -62,6 +68,9 @@ export default class WorkCard extends Vue {
   &__text-wrapper {
     margin-left: 20px;
     flex: 1;
+    /deep/ p {
+      white-space: pre-line;
+    }
     @include tablet {
       margin-left: 0px;
     }

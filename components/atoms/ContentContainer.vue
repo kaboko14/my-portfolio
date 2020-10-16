@@ -22,7 +22,7 @@ export default class ContentContainer extends Vue {
   &__container {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 0px 60px;
+    padding: 30px 60px 0px;
 
     background-color: antiquewhite;
   }
