@@ -12,9 +12,9 @@ export default class MyCard extends Vue {}
 <style lang="scss" scoped>
 .my-card {
   &__container {
-    padding: 20px;
+    padding: 10px 20px 20px;
     background-color: $base-color;
-    border-radius: 3px;
+    border-radius: 6px;
     box-shadow: $shadow;
   }
 }

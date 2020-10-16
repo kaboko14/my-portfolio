@@ -29,3 +29,12 @@ $view-max-width: 1100px;
 
 // 影の設定
 $shadow: 4px 2px 8px rgba(0,0,0,0.4);
+
+// メディアクエリ
+// break point
+$tablet: 767px;
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content
+  }
+}

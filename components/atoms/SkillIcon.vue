@@ -1,5 +1,5 @@
 <template>
-  <img :src="loadImage()" :alt="skill" class="skill-icon_image" />
+  <img :src="loadImage()" :alt="skill" class="skill-icon__image" />
 </template>
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
@@ -15,3 +15,11 @@ export default class SkillIcon extends Vue {
   }
 }
 </script>
+<style lang="scss" scoped>
+.skill-icon {
+  &__image {
+    display: block;
+    max-width: 100%;
+  }
+}
+</style>
