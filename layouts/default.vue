@@ -1,52 +1,29 @@
 <template>
-  <div>
+  <div class="default__container">
+    <header>
+      <menu-bar />
+    </header>
     <Nuxt />
   </div>
 </template>
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator'
+import MenuBar from '~/components/molecules/MenuBar.vue'
+
+@Component({
+  components: {
+    MenuBar,
+  },
+})
+export default class Default extends Vue {}
+</script>
 <style lang="scss">
-/* Box sizing rules */
-/* Box sizingの定義 */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default padding */
-/* デフォルトのpaddingを削除 */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
-/* デフォルトのmarginを削除 */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Set core body defaults */
-/* bodyのデフォルトを定義 */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
-/* ul、ol要素のリストスタイルを削除 */
-ul,
-ol {
-  list-style: none;
+.default {
+  &__container {
+    margin-left: $menuBar-width;
+    @include tablet {
+      margin-left: 0px;
+    }
+  }
 }
 </style>

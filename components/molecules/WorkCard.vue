@@ -1,6 +1,11 @@
 <template>
   <my-card>
-    <section>
+    <section
+      :class="{
+        'large-card': cardSize === 'large',
+        'small-card': cardSize === 'small',
+      }"
+    >
       <h4 class="work-card__title">{{ title }}</h4>
       <div class="work-card__inner-container">
         <div class="work-card__image-wrapper">
@@ -40,43 +45,60 @@ export default class WorkCard extends Vue {
 
   @Prop({ type: Array, required: true })
   skillList!: Array<string>
+
+  @Prop({ type: String, required: false, default: 'large' })
+  cardSize!: string
 }
 </script>
 <style lang="scss" scoped>
 .work-card {
-  &__inner-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    @include tablet {
-      display: block;
-    }
-  }
   &__title {
+    font-size: 18px;
     margin-bottom: 10px;
   }
   &__image-wrapper {
-    flex: 1;
+    margin-bottom: 10px;
     /deep/ img {
       //子コンポーネントのimgのサイズ指定
       width: 100%;
     }
-    @include tablet {
-      margin-bottom: 0px;
-    }
   }
   &__text-wrapper {
-    margin-left: 20px;
-    flex: 1;
     /deep/ p {
+      font-size: 14px;
       white-space: pre-line;
-    }
-    @include tablet {
-      margin-left: 0px;
     }
   }
   &__skill-icon-container {
     margin-top: 10px;
+  }
+}
+
+// 大きいカードのレイアウト
+.large-card {
+  & .work-card {
+    &__inner-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include tablet {
+        display: block;
+      }
+    }
+    &__image-wrapper {
+      flex: 1;
+      margin-bottom: 0px;
+      @include tablet {
+        margin-bottom: 10px;
+      }
+    }
+    &__text-wrapper {
+      flex: 1;
+      margin-left: 20px;
+      @include tablet {
+        margin-left: 0px;
+      }
+    }
   }
 }
 </style>

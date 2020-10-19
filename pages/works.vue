@@ -1,7 +1,7 @@
 <template>
   <content-container :title="'Works'" class="works__container">
     <h3 class="works__sub-title">Webアプリ</h3>
-    <works-card-container :works-list="worksList"></works-card-container>
+    <work-card-container :works-list="worksList"></work-card-container>
     <div>aa</div>
   </content-container>
 </template>
@@ -12,7 +12,7 @@ import MyCard from '~/components/atoms/MyCard.vue'
 import ContentContainer from '~/components/atoms/ContentContainer.vue'
 import SkillIconContainer from '~/components/molecules/SkillIconContainer.vue'
 import WorkCard from '~/components/molecules/WorkCard.vue'
-import WorksCardContainer from '~/components/molecules/WorksCardContainer.vue'
+import WorkCardContainer from '~/components/molecules/WorkCardContainer.vue'
 
 @Component({
   components: {
@@ -20,28 +20,47 @@ import WorksCardContainer from '~/components/molecules/WorksCardContainer.vue'
     SkillIconContainer,
     MyCard,
     WorkCard,
-    WorksCardContainer,
+    WorkCardContainer,
   },
 })
 export default class index extends Vue {
   worksList = {
     zakkuri: {
-      title: 'zakkri',
+      title: 'zaKKuri',
       image: require('~/assets/image/zakkuri_pre.png'),
       text: 'ざっくりと現金の管理をします。\n説明説明',
       skill: ['Vue', 'Sass', 'Firebase'],
+      cardSize: 'large',
     },
     zakkuri2: {
       title: 'zakkri',
       image: require('~/assets/image/zakkuri_pre.png'),
       text: '説明説明説明',
       skill: ['Vue', 'Sass', 'Firebase'],
+      cardSize: 'small',
+    },
+    zakkuri3: {
+      title: 'zakkri',
+      image: require('~/assets/image/zakkuri_pre.png'),
+      text: '説明説明説明',
+      skill: ['Vue', 'Sass', 'Firebase'],
+      cardSize: 'small',
+    },
+    zakkuri4: {
+      title: 'zakkri',
+      image: require('~/assets/image/zakkuri_pre.png'),
+      text: '説明説明説明',
+      skill: ['Vue', 'Sass', 'Firebase'],
+      cardSize: 'small',
     },
   }
 }
 </script>
 <style lang="scss" scoped>
-img {
-  width: 100%;
+.works {
+  &__sub-title {
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
 }
 </style>
