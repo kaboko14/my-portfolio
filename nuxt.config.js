@@ -60,4 +60,7 @@ export default {
       }
     },
   },
+  router: {
+    linkActiveClass: 'active',
+  },
 }

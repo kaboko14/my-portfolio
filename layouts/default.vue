@@ -18,6 +18,12 @@ import MenuBar from '~/components/molecules/MenuBar.vue'
 export default class Default extends Vue {}
 </script>
 <style lang="scss">
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif;
+  color: $font-color-bk;
+  letter-spacing: 0.03rem;
+}
 .default {
   &__container {
     margin-left: $menuBar-width;
