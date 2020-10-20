@@ -3,16 +3,20 @@
     <header>
       <menu-bar />
     </header>
-    <Nuxt />
+    <content-container>
+      <Nuxt />
+    </content-container>
   </div>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import ContentContainer from '~/components/atoms/ContentContainer.vue'
 import MenuBar from '~/components/molecules/MenuBar.vue'
 
 @Component({
   components: {
     MenuBar,
+    ContentContainer,
   },
 })
 export default class Default extends Vue {}

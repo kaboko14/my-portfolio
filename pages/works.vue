@@ -1,22 +1,22 @@
 <template>
-  <content-container :title="'Works'" class="works__container">
+  <section>
+    <page-title>Works</page-title>
     <h3 class="works__sub-title">Webアプリ</h3>
     <work-card-container :works-list="worksList"></work-card-container>
-    <div>aa</div>
-  </content-container>
+  </section>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import PageTitle from '~/components/atoms/PageTitle.vue'
 import MyCard from '~/components/atoms/MyCard.vue'
-import ContentContainer from '~/components/atoms/ContentContainer.vue'
 import SkillIconContainer from '~/components/molecules/SkillIconContainer.vue'
 import WorkCard from '~/components/molecules/WorkCard.vue'
 import WorkCardContainer from '~/components/molecules/WorkCardContainer.vue'
 
 @Component({
   components: {
-    ContentContainer,
+    PageTitle,
     SkillIconContainer,
     MyCard,
     WorkCard,
