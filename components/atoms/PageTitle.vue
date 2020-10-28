@@ -12,6 +12,6 @@ export default class PageTitle extends Vue {}
 .page-title {
   color: $main-color;
   font-size: 28px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 </style>

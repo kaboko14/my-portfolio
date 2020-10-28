@@ -1,6 +1,28 @@
 <template>
   <section>
     <page-title>About</page-title>
+    <div class="about__profile-wrapper">
+      <div class="about__profile-contents">
+        <h3>おおた かほり</h3>
+        <p>32歳</p>
+        <p>大阪市在中</p>
+        <a
+          href="https://github.com/kaboko14"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="~/assets/image/github.svg"
+            alt="GitHubリンク"
+            class="about__link-image"
+        /></a>
+      </div>
+      <img
+        src="~/assets/image/profile.JPG"
+        alt="プロフィール画像"
+        class="about__profile-image"
+      />
+    </div>
     <p class="about__text">
       はじめまして。<br />
       サイトにお越しくださりありがとうございます。<br /><br />
@@ -18,6 +40,11 @@
       現在は職業訓練にてJavaを学習しています。<br />
       積極的に学習することを常に心掛けています。<br />
     </p>
+    <h3 class="about__skill-title">学習中の言語</h3>
+    <skill-icon-container
+      :skill-list="skilList"
+      class="about__skill-icon-container"
+    />
   </section>
 </template>
 
@@ -34,12 +61,60 @@ import SkillIconContainer from '~/components/molecules/SkillIconContainer.vue'
     SkillIconContainer,
   },
 })
-export default class index extends Vue {}
+export default class about extends Vue {
+  skilList = [
+    'HTML',
+    'CSS',
+    'Sass',
+    'JavaScript',
+    'TypeScript',
+    'Vue',
+    'Nuxt',
+    'Java',
+  ]
+}
 </script>
 <style lang="scss" scoped>
-.works {
-  &__sub-title {
-    font-weight: normal;
+.about {
+  &__profile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    @include tablet {
+      display: block;
+    }
+  }
+  &__profile-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 30px;
+    order: 2;
+    @include tablet {
+      margin-left: 0px;
+    }
+    & > * {
+      margin-bottom: 10px;
+    }
+  }
+  &__profile-image {
+    width: 100%;
+    max-width: 280px;
+    order: 1;
+  }
+  &__link-image {
+    width: 40px;
+    opacity: 1;
+    transition: 0.2s;
+    &:hover {
+      transform: translateY(-5px);
+      opacity: 0.8;
+    }
+  }
+  &__text {
+    margin-bottom: 60px;
+  }
+  &__skill-title {
     margin-bottom: 20px;
   }
 }

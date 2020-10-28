@@ -4,7 +4,7 @@
       <menu-bar />
     </header>
     <content-container>
-      <Nuxt />
+      <Nuxt :nuxt-child-key="$route.fullPath" />
     </content-container>
   </div>
 </template>
@@ -19,7 +19,7 @@ import MenuBar from '~/components/molecules/MenuBar.vue'
     ContentContainer,
   },
 })
-export default class Default extends Vue {}
+export default class extends Vue {}
 </script>
 <style lang="scss">
 body {
@@ -27,6 +27,10 @@ body {
     'Hiragino Sans', Meiryo, sans-serif;
   color: $font-color-bk;
   letter-spacing: 0.03rem;
+}
+a {
+  color: $font-color-bk;
+  text-decoration: none;
 }
 .default {
   &__container {

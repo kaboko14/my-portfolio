@@ -1,26 +1,28 @@
 <template>
-  <my-card>
-    <section
-      :class="{
-        'large-card': cardSize === 'large',
-        'small-card': cardSize === 'small',
-      }"
-    >
-      <h4 class="work-card__title">{{ title }}</h4>
-      <div class="work-card__inner-container">
-        <div class="work-card__image-wrapper">
-          <img :src="image" :alt="title" />
+  <nuxt-link :to="pageLink">
+    <my-card>
+      <section
+        :class="{
+          'large-card': cardSize === 'large',
+          'small-card': cardSize === 'small',
+        }"
+      >
+        <h4 class="work-card__title">{{ title }}</h4>
+        <div class="work-card__inner-container">
+          <div class="work-card__image-wrapper">
+            <img :src="image" :alt="title" />
+          </div>
+          <div class="work-card__text-wrapper">
+            <p>{{ text }}</p>
+            <skill-icon-container
+              :skill-list="skillList"
+              class="work-card__skill-icon-container"
+            />
+          </div>
         </div>
-        <div class="work-card__text-wrapper">
-          <p>{{ text }}</p>
-          <skill-icon-container
-            :skill-list="skillList"
-            class="work-card__skill-icon-container"
-          />
-        </div>
-      </div>
-    </section>
-  </my-card>
+      </section>
+    </my-card>
+  </nuxt-link>
 </template>
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
@@ -45,6 +47,9 @@ export default class WorkCard extends Vue {
 
   @Prop({ type: Array, required: true })
   skillList!: Array<string>
+
+  @Prop({ type: String, required: true })
+  pageLink!: string
 
   @Prop({ type: String, required: false, default: 'large' })
   cardSize!: string

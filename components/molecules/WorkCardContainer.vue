@@ -7,6 +7,7 @@
       :image="work.image"
       :text="work.text"
       :skill-list="work.skill"
+      :page-link="work.pageLink"
       :card-size="work.cardSize"
       :class="{ 'large-card-container': work.cardSize === 'large' }"
       class="work-card-container__work-card"
