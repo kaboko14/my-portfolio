@@ -15,7 +15,7 @@ export default class ContentContainer extends Vue {}
 .content-container {
   &__container {
     max-width: 1080px;
-    margin: 0 auto;
+    min-height: 100vh;
     padding: 60px 40px;
     background-color: $base-color;
     @include tablet {

@@ -1,5 +1,8 @@
 <template>
-  <work-window :title="'ToDoList'" :skill-list="['HTML', 'CSS', 'JavaScript']">
+  <work-window
+    :title="'To Do List'"
+    :skill-list="['HTML', 'CSS', 'JavaScript']"
+  >
     <template v-slot:image>
       <img src="~/assets/image/toDoList.png" alt="ToDoListの画面プレビュー" />
     </template>
@@ -29,7 +32,7 @@
           href="https://kaboko14.github.io/todo-list/"
           target="_blank"
           rel="noopener noreferrer"
-          >ToDoList デモページ</a
+          >To Do List デモページ</a
         >
       </p>
     </template>
@@ -47,5 +50,5 @@ import WorkWindow from '~/components/molecules/WorkWindow.vue'
     WorkWindow,
   },
 })
-export default class zakkuri extends Vue {}
+export default class extends Vue {}
 </script>

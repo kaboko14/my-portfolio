@@ -28,7 +28,7 @@ export default class SkillIconContainer extends Vue {
   &__container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 46px);
-    grid-auto-rows: 56px;
+    grid-auto-rows: 46px;
     gap: 3%;
   }
   &__image {

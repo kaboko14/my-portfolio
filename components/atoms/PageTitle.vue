@@ -10,7 +10,7 @@ export default class PageTitle extends Vue {}
 </script>
 <style lang="scss" scoped>
 .page-title {
-  color: $main-color;
+  color: $accent-color;
   font-size: 28px;
   margin-bottom: 40px;
 }

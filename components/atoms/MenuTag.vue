@@ -21,56 +21,40 @@ export default class MenuTag extends Vue {
 
 <style lang="scss" scoped>
 .menu-tag {
-  &__list {
-    text-align: center;
-    margin-bottom: 10px;
-  }
   &__link {
     position: relative;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: bold;
     color: $font-color-bk;
-    text-decoration: none;
     display: inline-block;
-    padding: 10px 20px;
-    &::before,
+    padding: 10px 0px;
+    transform: scale(1, 1);
+    transition: 0.2s;
     &::after {
       content: '';
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%) scale(0);
-      width: 6px;
-      height: 6px;
-      background-color: $white;
-      border-radius: 50%;
-      z-index: -1;
-      transition: 0.3s;
-    }
-    &::before {
-      top: 50%;
-      left: 0px;
-    }
-    &::after {
-      top: 50%;
-      right: 0px;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 120%;
+      height: 3px;
+      background-image: $bg-image-stripe;
+      transition: 0.2s;
     }
     &:hover {
-      &::before,
+      transform: scale(1.2, 1.2);
       &::after {
-        transform: translateY(-50%) scale(1, 1);
+        transform: translateX(-50%) scale(0.83, 1);
       }
     }
 
     &.active {
+      color: $accent-color;
       &:hover {
-        opacity: 1;
+        transform: scale(1, 1);
       }
-      &::before,
       &::after {
-        top: 50%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        width: 50px;
-        height: 50px;
+        transform: scale(0, 0);
       }
     }
   }

@@ -12,11 +12,11 @@
           <h4 class="work-window__sub-title">■ リンク ■</h4>
           <slot name="link" />
           <h4 class="work-window__sub-title">■ 使用言語・環境 ■</h4>
-          <slot name="skill" />
           <skill-icon-container
             :skill-list="skillList"
             class="work-window__skil-icon-container"
           />
+          <slot name="skill" />
         </div>
       </div>
     </section>
@@ -74,15 +74,9 @@ export default class WorkCard extends Vue {
       margin-bottom: 16px;
     }
     /deep/ a {
-      display: inline-block;
-      margin-top: 6px;
-      padding: 6px;
-      border: 1px solid $main-color;
-      border-radius: 10px;
-      opacity: 1;
+      text-decoration: underline;
       transition: 0.2s;
       &:hover {
-        transform: translateY(-5px);
         opacity: 0.8;
       }
     }

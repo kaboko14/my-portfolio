@@ -1,9 +1,9 @@
 <template>
   <div class="default__container">
     <header>
-      <menu-bar />
+      <menu-bar class="default__menu-bar" />
     </header>
-    <content-container>
+    <content-container class="default__content-container">
       <Nuxt :nuxt-child-key="$route.fullPath" />
     </content-container>
   </div>
@@ -22,22 +22,16 @@ import MenuBar from '~/components/molecules/MenuBar.vue'
 export default class extends Vue {}
 </script>
 <style lang="scss">
-body {
-  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
-    'Hiragino Sans', Meiryo, sans-serif;
-  color: $font-color-bk;
-  letter-spacing: 0.03rem;
-}
-a {
-  color: $font-color-bk;
-  text-decoration: none;
-}
 .default {
   &__container {
+    min-height: 100vh;
     margin-left: $menuBar-width;
     @include tablet {
       margin-left: 0px;
     }
+  }
+  &__content-container {
+    margin: 0 auto;
   }
 }
 </style>

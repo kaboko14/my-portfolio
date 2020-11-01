@@ -51,13 +51,11 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import PageTitle from '~/components/atoms/PageTitle.vue'
-import ContentContainer from '~/components/atoms/ContentContainer.vue'
 import SkillIconContainer from '~/components/molecules/SkillIconContainer.vue'
 
 @Component({
   components: {
     PageTitle,
-    ContentContainer,
     SkillIconContainer,
   },
 })

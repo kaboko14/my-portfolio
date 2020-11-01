@@ -50,7 +50,7 @@ export default class NewWindow extends Vue {
     position: absolute;
     top: 10px;
     right: 10px;
-    border: 1px solid $gray-2;
+    border: 1px solid $gray-3;
     border-radius: 50%;
     display: flex;
     justify-content: center;

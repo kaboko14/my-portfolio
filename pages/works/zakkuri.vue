@@ -51,5 +51,14 @@ import WorkWindow from '~/components/molecules/WorkWindow.vue'
     WorkWindow,
   },
 })
-export default class zakkuri extends Vue {}
+export default class extends Vue {}
 </script>
+<style lang="scss" scoped>
+.zakkuri {
+  &__link-image {
+    padding: 10px;
+    border: 1px solid $gray-2;
+    border-radius: 10px;
+  }
+}
+</style>
