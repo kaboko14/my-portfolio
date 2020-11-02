@@ -10,6 +10,7 @@
           href="https://github.com/kaboko14"
           target="_blank"
           rel="noopener noreferrer"
+          class="about__link"
         >
           <img
             src="~/assets/image/github.svg"
@@ -100,7 +101,7 @@ export default class about extends Vue {
     max-width: 280px;
     order: 1;
   }
-  &__link-image {
+  &__link {
     width: 40px;
     opacity: 1;
     transition: 0.2s;
@@ -108,6 +109,9 @@ export default class about extends Vue {
       transform: translateY(-5px);
       opacity: 0.8;
     }
+  }
+  &__link-image {
+    width: 100%;
   }
   &__text {
     margin-bottom: 60px;

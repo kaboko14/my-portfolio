@@ -56,9 +56,15 @@ export default class extends Vue {}
 <style lang="scss" scoped>
 .zakkuri {
   &__link-image {
-    padding: 10px;
+    width: 100%;
+    max-width: 200px;
+    padding: 20px;
     border: 1px solid $gray-2;
-    border-radius: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 }
 </style>

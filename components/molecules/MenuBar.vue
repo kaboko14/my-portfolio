@@ -1,25 +1,32 @@
 <template>
-  <nav class="menu-bar__container" :class="{ 'is-view': isView }">
-    <div class="menu-bar__up-wrapper">
-      <nuxt-link to="/" class="menu-bar__home-link">
-        <img
-          src="~/assets/image/icon.png"
-          alt="ホームへのリンク"
-          class="menu-bar__icon"
-        /><br />
-        OTA KAHORI</nuxt-link
-      >
-    </div>
-    <ul class="menu-bar__under-wrapper">
-      <menu-tag
-        v-for="menu in menuList"
-        :key="menu.linkName"
-        :link-name="menu.linkName"
-        :link-url="menu.linkUrl"
-      />
-    </ul>
-    <div class="menu-bar__open-button" @click="menuOpen()">maru</div>
-  </nav>
+  <div class="menu-bar__wrapper" :class="{ 'is-view': isView }">
+    <nav class="menu-bar__container" :class="{ 'is-view': isView }">
+      <div class="menu-bar__up-wrapper">
+        <nuxt-link to="/" class="menu-bar__home-link">
+          <img
+            src="~/assets/image/icon.png"
+            alt="ホームへのリンク"
+            class="menu-bar__icon"
+          /><br />
+          OTA KAHORI</nuxt-link
+        >
+      </div>
+      <ul class="menu-bar__under-wrapper">
+        <menu-tag
+          v-for="menu in menuList"
+          :key="menu.linkName"
+          :link-name="menu.linkName"
+          :link-url="menu.linkUrl"
+          @click-menu-tag="menuOpen()"
+        />
+      </ul>
+    </nav>
+    <div
+      class="menu-bar__open-button"
+      :class="{ close: isView }"
+      @click.stop="menuOpen()"
+    ></div>
+  </div>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
@@ -44,7 +51,7 @@ export default class MenuBar extends Vue {
     },
   }
 
-  isView = true
+  isView = false
 
   menuOpen() {
     this.isView = !this.isView
@@ -53,39 +60,46 @@ export default class MenuBar extends Vue {
 </script>
 <style lang="scss" scoped>
 .menu-bar {
-  &__container {
+  &__wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: $menuBar-width;
-    height: 100vh;
-    padding: 60px 30px;
-    background-color: $main-color;
     @include tablet {
-      top: -100%;
-      width: 100vw;
-      height: 400px;
-      padding: 60px 30px 40px 30px;
-      transition: 0.3s;
+      height: 0;
     }
-
     &.is-view {
       @include tablet {
-        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($black, 0.8);
+        transition: 0.3s;
       }
     }
   }
-  &__up-wrapper {
-    flex: 1;
+  &__container {
+    text-align: center;
+    width: $menuBar-width;
+    height: 100vh;
+    padding: 60px 0px;
+    background-color: $main-color;
+    pointer-events: auto;
+    @include tablet {
+      width: 100vw;
+      height: 400px;
+      padding: 60px 30px 40px 30px;
+      transform: translateY(-100%);
+      transition: 0.3s;
+    }
+    &.is-view {
+      @include tablet {
+        transform: translateY(0);
+      }
+    }
   }
   &__home-link {
-    display: block;
+    display: inline-block;
     font-size: 20px;
     font-weight: bold;
-    flex: 1;
     transition: 0.2s;
     &:hover {
       transform: scale(1.1, 1.1);
@@ -98,12 +112,16 @@ export default class MenuBar extends Vue {
     object-fit: cover;
     border-radius: 50%;
   }
-  &__under-wrapper {
-    flex: 1;
+  &__up-wrapper {
+    margin-bottom: 40px;
     @include tablet {
-      flex: 0;
-      margin-top: auto;
+      margin-bottom: 20px;
     }
+  }
+  &__under-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__open-button {
     display: none;
@@ -112,6 +130,16 @@ export default class MenuBar extends Vue {
       position: fixed;
       top: 10px;
       right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $main-color url(~@/assets/image/hamburger.svg) center center
+        no-repeat;
+      background-size: 70%;
+      cursor: pointer;
+    }
+    &.close {
+      background-image: url(~@/assets/image/close.svg);
     }
   }
 }

@@ -41,11 +41,15 @@ export default class WorkCardContainer extends Vue {
   &__work-card {
     width: 48%;
     margin-bottom: 30px;
-    @include tablet {
-      width: 100%;
-    }
     &.large-card-container {
       width: 100%;
+    }
+    @include tablet {
+      width: 100%;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

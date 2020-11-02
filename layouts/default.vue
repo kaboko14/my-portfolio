@@ -24,14 +24,21 @@ export default class extends Vue {}
 <style lang="scss">
 .default {
   &__container {
+    position: relative;
     min-height: 100vh;
     margin-left: $menuBar-width;
+    z-index: 0;
+
     @include tablet {
       margin-left: 0px;
     }
   }
+  &__menu-bar {
+    z-index: 1;
+  }
   &__content-container {
     margin: 0 auto;
+    z-index: 1;
   }
 }
 </style>

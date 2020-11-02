@@ -1,5 +1,5 @@
 <template>
-  <li class="menu-tag__list">
+  <li class="menu-tag__list" @click="sendEvent(linkUrl)">
     <nuxt-link :to="linkUrl" class="menu-tag__link">
       {{ linkName }}
     </nuxt-link>
@@ -16,11 +16,21 @@ export default class MenuTag extends Vue {
 
   @Prop({ type: String, required: true })
   linkUrl!: string
+
+  sendEvent(url: String) {
+    if (url === this.$route.name) {
+      this.$emit('click-menu-tag')
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .menu-tag {
+  &__list {
+    display: block;
+    max-width: 80px;
+  }
   &__link {
     position: relative;
     font-size: 16px;
@@ -50,12 +60,7 @@ export default class MenuTag extends Vue {
 
     &.active {
       color: $accent-color;
-      &:hover {
-        transform: scale(1, 1);
-      }
-      &::after {
-        transform: scale(0, 0);
-      }
+      pointer-events: none;
     }
   }
 }

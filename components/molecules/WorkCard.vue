@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="pageLink">
+  <nuxt-link :to="pageLink" class="work-card__link">
     <my-card>
       <section
         :class="{
@@ -57,6 +57,9 @@ export default class WorkCard extends Vue {
 </script>
 <style lang="scss" scoped>
 .work-card {
+  &__link {
+    display: block;
+  }
   &__title {
     font-size: 18px;
     margin-bottom: 10px;

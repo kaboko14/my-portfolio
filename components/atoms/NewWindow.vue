@@ -31,6 +31,7 @@ export default class NewWindow extends Vue {
     height: 100vh;
     padding: 20px;
     background-color: rgba($black, 0.8);
+    z-index: 100;
   }
   &__container {
     display: flex;
