@@ -1,0 +1,40 @@
+// color pallet
+  // main-color
+  $main-color: #00AAFF;
+  $main-color-light: lighten($main-color, 15%);
+  $main-color-dark: darken($main-color, 15%);
+
+
+  // achromatic (grayscale)
+  $black: #231815;
+  $white: #ffffff;
+
+  $gray-1 :#EFEFEF;
+  $gray-2 :#C9CACA;
+  $gray-3 :#9FA0A0;
+  $gray-4 :#727171;
+  $gray-5 :#3e3a39;
+
+    // color Use
+    // background-color
+    $base-color: $white;
+
+    // font-color
+    $font-color-bk: $gray-5;
+    $font-color-wh: $white;
+
+
+// 表示横幅の最大値
+$view-max-width: 1100px;
+
+// 影の設定
+$shadow: 4px 2px 8px rgba(0,0,0,0.4);
+
+// メディアクエリ
+// break point
+$tablet: 767px;
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content
+  }
+}
