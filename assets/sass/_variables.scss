@@ -1,13 +1,12 @@
 // color pallet
   // main-color
   $main-color: #e9e9e0;
-  $main-color-light: lighten($main-color, 15%);
-  $main-color-dark: darken($main-color, 15%);
 
   // accent-color
   $accent-color: #00b4d1;
-  $accent-color-light: lighten($accent-color, 15%);
-  $accent-color-dark: darken($accent-color, 15%);
+
+  //error-color
+  $error-color: #D13800;
 
 
   // achromatic (grayscale)

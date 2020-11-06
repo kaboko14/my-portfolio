@@ -3,7 +3,7 @@
     <section>
       <page-title>Works</page-title>
       <h3 class="works__sub-title">Webアプリ</h3>
-      <work-card-container :works-list="worksList"></work-card-container>
+      <work-card-container :works-list="webAppList"></work-card-container>
       <nuxt-child />
     </section>
   </div>
@@ -28,7 +28,7 @@ import WorkCardContainer from '~/components/molecules/WorkCardContainer.vue'
   },
 })
 export default class works extends Vue {
-  worksList = {
+  webAppList = {
     zakkuri: {
       title: 'zaKKuri',
       image: require('~/assets/image/zaKKuri.png'),
@@ -37,7 +37,7 @@ export default class works extends Vue {
       pageLink: 'works/zakkuri',
       cardSize: 'large',
     },
-    zakkuri2: {
+    toDoList: {
       title: 'To Do List',
       image: require('~/assets/image/toDoList.png'),
       text: '説明説明説明',
@@ -45,20 +45,12 @@ export default class works extends Vue {
       pageLink: 'works/todolist',
       cardSize: 'small',
     },
-    zakkuri3: {
+    wordCounter: {
       title: 'Word Counter',
       image: require('~/assets/image/wordCounter.png'),
       text: '説明説明説明',
       skill: ['HTML', 'CSS', 'Vue'],
       pageLink: 'works/wordcounter',
-      cardSize: 'small',
-    },
-    zakkuri4: {
-      title: 'zakkri',
-      image: require('~/assets/image/zaKKuri.png'),
-      text: '説明説明説明',
-      skill: ['Vue', 'Sass', 'Firebase'],
-      pageLink: 'works/zakkuri',
       cardSize: 'small',
     },
   }

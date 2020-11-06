@@ -22,6 +22,8 @@ import MenuBar from '~/components/molecules/MenuBar.vue'
 export default class extends Vue {}
 </script>
 <style lang="scss">
+@import '~/assets/sass/style';
+
 .default {
   &__container {
     position: relative;

@@ -15,6 +15,8 @@ import MenuBar from '~/components/molecules/MenuBar.vue'
 export default class extends Vue {}
 </script>
 <style lang="scss">
+@import '~/assets/sass/style';
+
 .home {
   &__container {
     min-width: 100vw;

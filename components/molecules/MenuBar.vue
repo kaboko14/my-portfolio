@@ -1,5 +1,10 @@
 <template>
-  <div class="menu-bar__wrapper" :class="{ 'is-view': isView }">
+  <div class="menu-bar__wrapper">
+    <div
+      class="menu-bar__tablet-menu-background"
+      :class="{ 'is-view': isView }"
+      @click.stop="menuOpen()"
+    />
     <nav class="menu-bar__container" :class="{ 'is-view': isView }">
       <div class="menu-bar__up-wrapper">
         <nuxt-link to="/" class="menu-bar__home-link">
@@ -64,15 +69,22 @@ export default class MenuBar extends Vue {
     position: fixed;
     top: 0;
     left: 0;
+  }
+  &__tablet-menu-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
     @include tablet {
-      height: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba($black, 0);
+      pointer-events: none;
     }
     &.is-view {
       @include tablet {
-        width: 100vw;
-        height: 100vh;
         background-color: rgba($black, 0.8);
-        transition: 0.3s;
+        pointer-events: auto;
       }
     }
   }
@@ -84,6 +96,9 @@ export default class MenuBar extends Vue {
     background-color: $main-color;
     pointer-events: auto;
     @include tablet {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 400px;
       padding: 60px 30px 40px 30px;
