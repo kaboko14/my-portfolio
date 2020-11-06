@@ -1,60 +1,46 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="default__container">
+    <header>
+      <menu-bar class="default__menu-bar" />
+    </header>
+    <content-container class="default__content-container">
+      <Nuxt :nuxt-child-key="$route.fullPath" />
+    </content-container>
   </div>
 </template>
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator'
+import ContentContainer from '~/components/atoms/ContentContainer.vue'
+import MenuBar from '~/components/molecules/MenuBar.vue'
+
+@Component({
+  components: {
+    MenuBar,
+    ContentContainer,
+  },
+})
+export default class extends Vue {}
+</script>
 <style lang="scss">
-/* Box sizing rules */
-/* Box sizingの定義 */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import '~/assets/sass/style';
 
-/* Remove default padding */
-/* デフォルトのpaddingを削除 */
-ul[class],
-ol[class] {
-  padding: 0;
-}
+.default {
+  &__container {
+    position: relative;
+    min-height: 100vh;
+    margin-left: $menuBar-width;
+    z-index: 0;
 
-/* デフォルトのmarginを削除 */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Set core body defaults */
-/* bodyのデフォルトを定義 */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* ul、ol要素のリストスタイルを削除 */
-ul,
-ol {
-  list-style: none;
-}
-
-/* img */
-img {
-  max-width: 100%;
-  display: block;
+    @include tablet {
+      margin-left: 0px;
+    }
+  }
+  &__menu-bar {
+    z-index: 1;
+  }
+  &__content-container {
+    margin: 0 auto;
+    z-index: 1;
+  }
 }
 </style>
