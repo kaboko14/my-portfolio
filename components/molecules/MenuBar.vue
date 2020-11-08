@@ -44,15 +44,15 @@ export default class MenuBar extends Vue {
   menuList = {
     about: {
       linkName: 'About',
-      linkUrl: 'about',
+      linkUrl: '/about',
     },
     works: {
       linkName: 'Works',
-      linkUrl: 'works',
+      linkUrl: '/works',
     },
     contact: {
       linkName: 'Contact',
-      linkUrl: 'contact',
+      linkUrl: '/contact',
     },
   }
 

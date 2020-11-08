@@ -34,7 +34,7 @@ export default class works extends Vue {
       image: require('~/assets/image/zaKKuri.png'),
       text: 'ざっくりと現金の管理をします。\n説明説明',
       skill: ['Vue', 'Sass', 'Firebase'],
-      pageLink: 'works/zakkuri',
+      pageLink: '/works/zakkuri',
       cardSize: 'large',
     },
     toDoList: {
@@ -42,7 +42,7 @@ export default class works extends Vue {
       image: require('~/assets/image/toDoList.png'),
       text: '説明説明説明',
       skill: ['HTML', 'CSS', 'JavaScript'],
-      pageLink: 'works/todolist',
+      pageLink: '/works/todolist',
       cardSize: 'small',
     },
     wordCounter: {
@@ -50,7 +50,7 @@ export default class works extends Vue {
       image: require('~/assets/image/wordCounter.png'),
       text: '説明説明説明',
       skill: ['HTML', 'CSS', 'Vue'],
-      pageLink: 'works/wordcounter',
+      pageLink: '/works/wordcounter',
       cardSize: 'small',
     },
   }
