@@ -1,7 +1,8 @@
 <template>
   <nuxt-link :to="pageLink" class="work-card__link">
-    <my-card>
-      <section
+    <my-card class="work-card__card">
+      <article
+        class="work-card__container"
         :class="{
           'large-card': cardSize === 'large',
           'small-card': cardSize === 'small',
@@ -13,14 +14,14 @@
             <img :src="image" :alt="title" />
           </div>
           <div class="work-card__text-wrapper">
-            <p>{{ text }}</p>
+            <p class="work-card__text">{{ text }}</p>
             <skill-icon-container
               :skill-list="skillList"
               class="work-card__skill-icon-container"
             />
           </div>
         </div>
-      </section>
+      </article>
     </my-card>
   </nuxt-link>
 </template>
@@ -60,9 +61,22 @@ export default class WorkCard extends Vue {
   &__link {
     display: block;
   }
+  &__card {
+    height: 100%;
+  }
   &__title {
     font-size: 18px;
     margin-bottom: 10px;
+  }
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__inner-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   &__image-wrapper {
     margin-bottom: 10px;
@@ -72,13 +86,17 @@ export default class WorkCard extends Vue {
     }
   }
   &__text-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /deep/ p {
       font-size: 14px;
       white-space: pre-line;
     }
   }
-  &__skill-icon-container {
-    margin-top: 10px;
+  &__text {
+    margin-bottom: 20px;
   }
 }
 
@@ -86,9 +104,8 @@ export default class WorkCard extends Vue {
 .large-card {
   & .work-card {
     &__inner-container {
-      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
       @include tablet {
         display: block;
       }

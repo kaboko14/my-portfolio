@@ -32,7 +32,8 @@ export default class works extends Vue {
     zakkuri: {
       title: 'zaKKuri',
       image: require('~/assets/image/zaKKuri.png'),
-      text: 'ざっくりと現金の管理をします。\n説明説明',
+      text:
+        '面倒な現金の入出金記録を「ざっくり！」と記録するためのアプリです。',
       skill: ['Vue', 'Sass', 'Firebase'],
       pageLink: '/works/zakkuri',
       cardSize: 'large',
@@ -40,7 +41,8 @@ export default class works extends Vue {
     toDoList: {
       title: 'To Do List',
       image: require('~/assets/image/toDoList.png'),
-      text: '説明説明説明',
+      text:
+        'ToDoを管理できるアプリです。登録したデータはブラウザのローカルストレージに保存されます。',
       skill: ['HTML', 'CSS', 'JavaScript'],
       pageLink: '/works/todolist',
       cardSize: 'small',
