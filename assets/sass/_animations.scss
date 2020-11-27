@@ -1,0 +1,16 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@for $i from 0 through 4 {
+  .fade-in-#{$i + 1} {
+    animation: fade-in 0.5s 0s + 0.2s * $i backwards ease;
+  }
+}

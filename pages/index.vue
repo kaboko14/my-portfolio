@@ -1,14 +1,14 @@
 <template>
   <div class="index__container">
     <section class="index__content-wrapper">
-      <h1 class="index__name">OTA KAHORI</h1>
-      <p class="index__text">
+      <h1 class="index__name fade-in-1">OTA KAHORI</h1>
+      <p class="index__text fade-in-2">
         こちらは太田かほりのポートフォリオサイトです。<br />
         会計事務所で勤務していた経験を経て、働く人たちの役に立つツール作りに携わりたいと考えエンジニアを目指して学習しています。<br />
         「物事の効率化」「課題の発見・解決」が実現できるエンジニアを目指しています。
       </p>
     </section>
-    <nav class="index__menu-container">
+    <nav class="index__menu-container fade-in-3">
       <ul class="index__menu-wrapper">
         <menu-tag
           v-for="menu in menuList"

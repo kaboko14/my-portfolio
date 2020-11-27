@@ -1,5 +1,5 @@
 <template>
-  <h2 class="page-title">
+  <h2 class="page-title fade-in-1">
     <slot />
   </h2>
 </template>

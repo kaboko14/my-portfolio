@@ -2,8 +2,11 @@
   <div>
     <section>
       <page-title>Works</page-title>
-      <h3 class="works__sub-title">Webアプリ</h3>
-      <work-card-container :works-list="webAppList"></work-card-container>
+      <h3 class="works__sub-title fade-in-2">Webアプリ</h3>
+      <work-card-container
+        :works-list="webAppList"
+        class="fade-in-2"
+      ></work-card-container>
       <nuxt-child />
     </section>
   </div>
@@ -38,6 +41,15 @@ export default class works extends Vue {
       pageLink: '/works/zakkuri',
       cardSize: 'large',
     },
+    wordCounter: {
+      title: 'Word Counter',
+      image: require('~/assets/image/wordCounter.png'),
+      text:
+        '英文中に含まれる英単語の個数を単語ごとにカウントするためのアプリです。Vue.jsの学習のために作成いたしました',
+      skill: ['HTML', 'CSS', 'Vue'],
+      pageLink: '/works/wordcounter',
+      cardSize: 'small',
+    },
     toDoList: {
       title: 'To Do List',
       image: require('~/assets/image/toDoList.png'),
@@ -45,14 +57,6 @@ export default class works extends Vue {
         'ToDoを管理できるアプリです。登録したデータはブラウザのローカルストレージに保存されます。',
       skill: ['HTML', 'CSS', 'JavaScript'],
       pageLink: '/works/todolist',
-      cardSize: 'small',
-    },
-    wordCounter: {
-      title: 'Word Counter',
-      image: require('~/assets/image/wordCounter.png'),
-      text: '説明説明説明',
-      skill: ['HTML', 'CSS', 'Vue'],
-      pageLink: '/works/wordcounter',
       cardSize: 'small',
     },
   }

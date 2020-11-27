@@ -1,7 +1,7 @@
 <template>
   <div class="contact__container">
     <page-title>Contact</page-title>
-    <contact-forms></contact-forms>
+    <contact-forms class="fade-in-2"></contact-forms>
   </div>
 </template>
 <script lang="ts">

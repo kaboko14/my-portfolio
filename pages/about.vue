@@ -1,10 +1,10 @@
 <template>
   <section>
     <page-title>About</page-title>
-    <div class="about__profile-wrapper">
+    <div class="about__profile-wrapper fade-in-2">
       <div class="about__profile-contents">
         <h3>おおた かほり</h3>
-        <p>32歳</p>
+        <p>33歳</p>
         <p>大阪市在中</p>
         <a
           href="https://github.com/kaboko14"
@@ -24,7 +24,7 @@
         class="about__profile-image"
       />
     </div>
-    <p class="about__text">
+    <p class="about__text fade-in-3">
       はじめまして。<br />
       サイトにお越しくださりありがとうございます。<br /><br />
       私は会計事務所に6年ほど勤務しておりました。<br />

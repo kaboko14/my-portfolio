@@ -1,6 +1,6 @@
 <template>
   <div class="new-window__background">
-    <div class="new-window__container">
+    <div class="new-window__container fade-in-1">
       <div class="new-window__close-button" @click="closeWindow()">×</div>
       <div class="new-window__contents">
         <slot />
