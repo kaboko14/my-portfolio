@@ -1,5 +1,5 @@
 <template>
-  <li class="menu-tag__list" @click="sendEvent(linkUrl)">
+  <li class="menu-tag__list" @click="sendEvent()">
     <nuxt-link :to="linkUrl" class="menu-tag__link">
       {{ linkName }}
     </nuxt-link>
@@ -17,10 +17,8 @@ export default class MenuTag extends Vue {
   @Prop({ type: String, required: true })
   linkUrl!: string
 
-  sendEvent(url: String) {
-    if (url === this.$route.name) {
-      this.$emit('click-menu-tag')
-    }
+  sendEvent() {
+    this.$emit('click-menu-tag')
   }
 }
 </script>
