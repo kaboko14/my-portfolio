@@ -63,7 +63,4 @@ export default {
   router: {
     linkActiveClass: 'active',
   },
-  generate: {
-    subFolders: false,
-  },
 }
